@@ -1,6 +1,6 @@
 class Board:
     def __init__(self, size: int = 8):
-        self.size = 8
+        self.size = size
         self.board = [[0] * self.size] * self.size
 
     def __repr__(self):
