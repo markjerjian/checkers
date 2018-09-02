@@ -44,17 +44,17 @@ class Board:
         return board_matrix
 
     def remove_piece(self, x, y):
-        self.board_matrix[x][y] = None
+        self.board[x][y] = None
 
     def move_piece(self, start_x, start_y, end_x, end_y):
 
-        self.board_matrix[end_x][end_y].occupant = self.board_matrix[start_x][start_y].occupant
+        self.board[end_x][end_y].occupant = self.board[start_x][start_y].occupant
         self.remove_piece(start_x, start_y)
 
-        if self.board_matrix[end_x][end_y].occupant is not None:
-            if (self.board_matrix[end_x][end_y].occupant.color == Colour.BLACK and end_y == 0) or (
-                            self.board_matrix[end_x][end_y].occupant.color == Colour.WHITE and end_y == self.size - 1):
-                self.board_matrix[end_x][end_y].occupant.king = True
+        if self.board[end_x][end_y].occupant is not None:
+            if (self.board[end_x][end_y].occupant.color == Colour.BLACK and end_y == 0) or (
+                            self.board[end_x][end_y].occupant.color == Colour.WHITE and end_y == self.size - 1):
+                self.board[end_x][end_y].occupant.king = True
 
 if __name__ == "__main__":
     board = Board()
