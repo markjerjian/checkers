@@ -6,10 +6,8 @@ from colour import Colour
 class Piece:
     def __init__(self,
                  colour: Colour,
-                 position: Tuple[int, int],
                  is_king: bool = False):
         self.colour = colour
-        self.position = position
         self.is_king = is_king
 
     def promote(self):
@@ -23,5 +21,5 @@ class Piece:
 
 
 if __name__ == "__main__":
-    piece = Piece(Colour.WHITE, (3, 2), True)
+    piece = Piece(Colour.WHITE, True)
     print(piece)
